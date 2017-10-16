@@ -1,0 +1,6 @@
+usr/local/bin/rezabit-qt usr/bin
+share/pixmaps/rezabit32.xpm usr/share/pixmaps
+share/pixmaps/rezabit16.xpm usr/share/pixmaps
+share/pixmaps/rezabit128.png usr/share/pixmaps
+debian/rezabit-qt.desktop usr/share/applications
+debian/rezabit-qt.protocol usr/share/kde4/services/

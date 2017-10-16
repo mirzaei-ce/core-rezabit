@@ -1,0 +1,33 @@
+# /etc/conf.d/rezabitd: config file for /etc/init.d/rezabitd
+
+# Config file location
+#REZABITD_CONFIGFILE="/etc/rezabit/rezabit.conf"
+
+# What directory to write pidfile to?  (created and owned by $REZABITD_USER)
+#REZABITD_PIDDIR="/var/run/rezabitd"
+
+# What filename to give the pidfile
+#REZABITD_PIDFILE="${REZABITD_PIDDIR}/rezabitd.pid"
+
+# Where to write rezabitd data (be mindful that the blockchain is large)
+#REZABITD_DATADIR="/var/lib/rezabitd"
+
+# User and group to own rezabitd process
+#REZABITD_USER="rezabit"
+#REZABITD_GROUP="rezabit"
+
+# Path to rezabitd executable
+#REZABITD_BIN="/usr/bin/rezabitd"
+
+# Nice value to run rezabitd under
+#REZABITD_NICE=0
+
+# Additional options (avoid -conf and -datadir, use flags above)
+REZABITD_OPTS="-disablewallet"
+
+# The timeout in seconds OpenRC will wait for rezabitd to terminate
+# after a SIGTERM has been raised.
+# Note that this will be mapped as argument to start-stop-daemon's
+# '--retry' option, which means you can specify a retry schedule
+# here. For more information see man 8 start-stop-daemon.
+REZABITD_SIGTERM_TIMEOUT=60

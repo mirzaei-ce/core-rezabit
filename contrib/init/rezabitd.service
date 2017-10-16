@@ -1,0 +1,22 @@
+[Unit]
+Description=Rezabit's distributed currency daemon
+After=network.target
+
+[Service]
+User=rezabit
+Group=rezabit
+
+Type=forking
+PIDFile=/var/lib/rezabitd/rezabitd.pid
+ExecStart=/usr/bin/rezabitd -daemon -pid=/var/lib/rezabitd/rezabitd.pid \
+-conf=/etc/rezabit/rezabit.conf -datadir=/var/lib/rezabitd -disablewallet
+
+Restart=always
+PrivateTmp=true
+TimeoutStopSec=60s
+TimeoutStartSec=2s
+StartLimitInterval=120s
+StartLimitBurst=5
+
+[Install]
+WantedBy=multi-user.target
